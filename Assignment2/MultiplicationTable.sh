@@ -1,7 +1,22 @@
 echo "Enter the range For Multiplication table : "
-read -p "Enter first value : " first
-read -p "Enter Second value : " second
-for (( i=$first; i <= $second; i++ ))
+until [ $true ];
+do
+	read -p "Enter First value : " first
+	read -p "Enter Last value : " last
+	if [ $first -eq $first -o $last -eq $last ] 2>error.txt
+	then
+		if [ $first -gt $last -o $first -eq $last ]; then
+			echo "First value should be less than last value"
+		elif [ $first -lt 0 -o $first -eq 0 ];then
+			echo "Values must not be Zero or negative"
+		else
+			break;
+		fi
+	else
+		echo "error: Enter only Integer values"	
+	fi
+done
+for (( i=$first; i <= $last; i++ ))
 do
 	echo "$i Multiplication table is"
 	for (( j=1; j <= 10; j++ ))
