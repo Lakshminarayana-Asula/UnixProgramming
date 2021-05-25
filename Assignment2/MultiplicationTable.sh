@@ -1,9 +1,10 @@
+temp=0
 echo "Enter the range For Multiplication table : "
-until [ $true ];
+until [ $false ];
 do
 	read -p "Enter First value : " first
 	read -p "Enter Last value : " last
-	if [ $first -eq $first -o $last -eq $last ] 2>error.txt
+	if [ $first -eq $first -a $last -eq $last ] 2>error.txt
 	then
 		if [ $first -gt $last -o $first -eq $last ]; then
 			echo "First value should be less than last value"
